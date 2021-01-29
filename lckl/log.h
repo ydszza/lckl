@@ -101,6 +101,10 @@ public:
      */
     std::stringstream& get_ss() { return m_ss; }
     /**
+     * @brief 返回日志内容
+    */
+   std::string get_content() const { return m_ss.str(); }
+    /**
      * @brief Get the logger
      */
     std::shared_ptr<Logger> get_logger() const { return m_logger; }
@@ -243,6 +247,19 @@ private:
     std::string m_pattern;
     std::vector<FormatItem::ptr> m_items;
     bool m_error = false;
+};
+
+/**
+ * @brief 日志输出器
+*/
+class LogAppender {
+
+};
+
+class Logger {
+public:
+    typedef std::shared_ptr<Logger> ptr;
+    std::string get_name() {}
 };
 
 }
